@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPX.Server.Extension", "GPX.Server.Extension\GPX.Server.Extension.csproj", "{43876DC5-6AD3-452B-94EA-7BB5CFE52830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPX.Server.Extension.Spatial", "GPX.Server.Extension.Spatial\GPX.Server.Extension.Spatial.csproj", "{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{43876DC5-6AD3-452B-94EA-7BB5CFE52830}.Release|x86.ActiveCfg = Release|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

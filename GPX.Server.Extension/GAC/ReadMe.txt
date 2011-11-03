@@ -1,0 +1,1 @@
+﻿The included batch files can be used to register and unregister an extension with the Global Assembly Cache (GAC)
