@@ -5,7 +5,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPX.Server.Extension", "GPX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPX.Server.Extension.Spatial", "GPX.Server.Extension.Spatial\GPX.Server.Extension.Spatial.csproj", "{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoJSON.Net", "..\GeoJSON.Net\src\GeoJSON.Net\GeoJSON.Net.csproj", "{7C0D45ED-681E-4DEC-9910-BAE1211E4889}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1E87348-DF4F-4DE9-85DB-823CF469227B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPX.Server.Extension.Tests", "GPX.Server.Extension.Tests\GPX.Server.Extension.Tests.csproj", "{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = GPX.Server.Extension.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -35,6 +44,26 @@ Global
 		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D45B21ED-CDBA-44F8-91AB-58A083B16DF0}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7C0D45ED-681E-4DEC-9910-BAE1211E4889}.Release|x86.ActiveCfg = Release|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{205B1A79-A5B0-4D36-A5D8-7A3D602DA684}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,1 +1,6 @@
 http://geoplex.com.au/mainsite/exporter-extension-for-arcgis-server/
+
+Nuget Packages are not committed to the repository. See the following article:
+
+http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages
+

@@ -190,6 +190,7 @@ namespace GPX.Server.Extension
                 long? transformationId = null;
                 GPX.Server.Extension.Spatial.MapServer mapserver = new Spatial.MapServer(serverObjectHelper.ServerObject);
 
+                logger.LogMessage(ServerLogger.msgType.infoDetailed, "ExportLayerHandler", 999999, "Beginning Export");
 
 
                 //layerID
@@ -356,7 +357,7 @@ namespace GPX.Server.Extension
 
                 throw new ArgumentOutOfRangeException("layerID");
             }
-            catch (Exception ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 logger.LogMessage(ServerLogger.msgType.error, "GetLayerInfo", SOE_ERROR_CODE, "An error occurred getting the export layer info: " + ex.ToString());
                 throw ex;
