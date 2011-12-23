@@ -277,7 +277,8 @@ namespace GPX.Server.Extension
 
         private static void Regasm()
         {
-            var t = Type.GetType(classid);
+            //var t = Type.GetType(classid);
+            var t = System.Type.GetType(typeof(GPX.Server.Extension.Exporter).AssemblyQualifiedName);
             if (t == null)
                 throw new Exception("cannot get type for " + classid);
 
