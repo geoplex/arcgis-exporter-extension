@@ -23,13 +23,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.ServiceModel.Syndication;
+using System.Text;
+using System.Xml;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
-using System.Xml;
-using System.Xml.Linq;
-using GPX.Server.Extension.Spatial;
 
 namespace GPX.Server.Extension
 {
@@ -52,7 +50,7 @@ namespace GPX.Server.Extension
 
             GeoRSSExportProperties feedProperties = (GeoRSSExportProperties)exportProperties;
 
-            
+
 
             //add the georss namespace
             this.AttributeExtensions.Add(new XmlQualifiedName(GEORSS_NS_PREFIX, XML_NS), GEORSS_NS);
@@ -132,7 +130,7 @@ namespace GPX.Server.Extension
                         }
 
                         //process the geometry
-                
+
                         int fieldIndex = row.Fields.FindField(feedProperties.GeometryField);
 
                         if (fieldIndex == -1)
@@ -275,11 +273,11 @@ namespace GPX.Server.Extension
             }
             catch (Exception ex)
             {
-                Exporter.logger.LogMessage(ESRI.ArcGIS.SOESupport.ServerLogger.msgType.error, 
-                    "SetItenValues", 
-                    999999, 
+                Exporter.logger.LogMessage(ESRI.ArcGIS.SOESupport.ServerLogger.msgType.error,
+                    "SetItenValues",
+                    999999,
                     "Item Config Key:" + itemConfig.Key +
-                    "Error Message: "+ ex.Message.ToString());
+                    "Error Message: " + ex.Message.ToString());
             }
             finally
             {
@@ -336,7 +334,7 @@ namespace GPX.Server.Extension
 
                         if (inputFields.Count != inputFieldAlias.Count)
                             throw new Exception("Mapped field count does not equal alias field count");
-                        
+
                     }
 
 
@@ -412,8 +410,8 @@ namespace GPX.Server.Extension
                     Exporter.logger.LogMessage(ESRI.ArcGIS.SOESupport.ServerLogger.msgType.infoDetailed,
                     "GetItemContent",
                     999999,
-                    "field Name: "+ field.Name +
-                    "field alias: "+ field.AliasName
+                    "field Name: " + field.Name +
+                    "field alias: " + field.AliasName
                     );
                 }
 
