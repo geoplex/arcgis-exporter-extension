@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportOutputSpatialReference.cs" />
     <Compile Include="MapServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

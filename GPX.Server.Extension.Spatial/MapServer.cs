@@ -21,22 +21,18 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using ESRI.ArcGIS.Carto;
-using ESRI.ArcGIS.Server;
-using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Geodatabase;
-using ESRI.ArcGIS.SOESupport;
+using ESRI.ArcGIS.Geometry;
+using ESRI.ArcGIS.Server;
 
 namespace GPX.Server.Extension.Spatial
 {
     public class MapServer
     {
-        private IMapServer3  _server;
+        private IMapServer3 _server;
 
-        public IMapServer3  Server
+        public IMapServer3 Server
         {
             set { _server = value; }
         }
@@ -60,7 +56,7 @@ namespace GPX.Server.Extension.Spatial
         /// <param name="attributeFilter">The attribute filter.</param>
         /// <param name="transformationId">The transformation id.</param>
         /// <returns></returns>
-        public RecordSet Query(int layerId, IGeometry spatialFilter, string attributeFilter, long? transformationId)
+        public RecordSet Query(int layerId, IGeometry spatialFilter, string attributeFilter, string geometryFieldName, ExportOutputSpatialReference outputSr)
         {
             ISpatialFilter filter = new SpatialFilterClass();
             RecordSet recordSet = null;
@@ -72,6 +68,32 @@ namespace GPX.Server.Extension.Spatial
             {
                 //set the filter properties
                 filter.Geometry = spatialFilter;
+
+                //todo
+                //the geometry field name comes in via the request, but could we look at layerinfo from the map server?
+                //the type of spatial reference systen should be passed in: i.e. geographic or projected
+
+                //create desired output spatial reference
+                if (outputSr != null)
+                {
+                    Type t = Type.GetTypeFromProgID("esriGeometry.SpatialReferenceEnvironment");
+                    System.Object obj = Activator.CreateInstance(t);
+                    ISpatialReferenceFactory srFact = obj as ISpatialReferenceFactory;
+
+                    ISpatialReference sr;
+
+                    if (outputSr.CoordinateSystemType == "projected")
+                    {
+                        sr = srFact.CreateProjectedCoordinateSystem((int)outputSr.Wkid);
+                    }
+                    else sr = srFact.CreateGeographicCoordinateSystem((int)outputSr.Wkid);
+
+                    filter.GeometryField = geometryFieldName;
+                    filter.set_OutputSpatialReference(geometryFieldName, sr);
+                }
+
+
+
                 filter.SpatialRel = esriSpatialRelEnum.esriSpatialRelIntersects;
                 if (!String.IsNullOrEmpty(attributeFilter))
                     filter.WhereClause = attributeFilter;
@@ -80,25 +102,23 @@ namespace GPX.Server.Extension.Spatial
                 resultOptions = new QueryResultOptionsClass();
                 resultOptions.Format = esriQueryResultFormat.esriQueryResultRecordSetAsObject;
 
-                //todo - submitted forum question to esri: http://forums.arcgis.com/threads/39248-Setting-GeoTransformation-on-QueryResultOptionsClass-does-not-work?p=132913
                 //apply transformation if required
-                if (transformationId != null)
+                if (outputSr != null)
                 {
-                    //ISpatialReferenceFactory2 srFactory;
-                    //srFactory = new SpatialReferenceEnvironmentClass();
+                    if (outputSr.TransformationId != null)
+                    {
+                        Type factoryType = Type.GetTypeFromProgID("esriGeometry.SpatialReferenceEnvironment");
+                        ISpatialReferenceFactory3 srFactory = (ISpatialReferenceFactory3)Activator.CreateInstance(factoryType);
+                        IGeoTransformation gt;
+                        gt = srFactory.CreateGeoTransformation((int)outputSr.TransformationId) as IGeoTransformation;
 
-                    Type factoryType = Type.GetTypeFromProgID("esriGeometry.SpatialReferenceEnvironment");
-                    ISpatialReferenceFactory3 srFactory = (ISpatialReferenceFactory3)Activator.CreateInstance(factoryType);
-
-
-                    IGeoTransformation gt;
-                    gt = srFactory.CreateGeoTransformation((int)transformationId) as IGeoTransformation;
-
-                    resultOptions.GeoTransformation = gt;
+                        resultOptions.GeoTransformation = gt;
+                    }
                 }
-                
+
 
                 tableDesc = GetTableDesc(_server, layerId);
+
                 result = _server.QueryData(_server.DefaultMapName, tableDesc, filter, resultOptions);
 
                 //IlayerDescription3 lyrDesc = GetLayerDesc(_server, layerId);
@@ -108,7 +128,7 @@ namespace GPX.Server.Extension.Spatial
 
                 return recordSet;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -157,8 +177,8 @@ namespace GPX.Server.Extension.Spatial
             {
                 ILayerDescription3 layerDesc = (ILayerDescription3)layerDescs.get_Element(i);
 
-                
-                 
+
+
                 if (layerDesc.ID == layerId)
                 {
                     layerDesc.LayerResultOptions = new LayerResultOptionsClass();
@@ -167,7 +187,7 @@ namespace GPX.Server.Extension.Spatial
                     //optionally apply densify or generalise operation to geometries
                     //layerDesc.LayerResultOptions.GeometryResultOptions = new GeometryResultOptionsClass();
                     //layerDesc.LayerResultOptions.GeometryResultOptions.DensifyGeometries = false; 
-                    
+
 
                     return (IMapTableDescription)layerDesc;
                 }
@@ -207,14 +227,14 @@ namespace GPX.Server.Extension.Spatial
                 int fieldIndex;
                 try
                 {
-                     fieldIndex = fc.Fields.FindField(fieldName);
+                    fieldIndex = fc.Fields.FindField(fieldName);
                 }
                 catch (Exception)
                 {
 
                     throw new Exception("Unable to access the field: " + fieldName + "on feature class: " + fc.AliasName);
                 }
-                
+
 
                 return fc.Fields.get_Field(fieldIndex).AliasName;
             }
@@ -249,7 +269,7 @@ namespace GPX.Server.Extension.Spatial
                 dataAccess = (IMapServerDataAccess)_server;
                 fc = (IFeatureClass)dataAccess.GetDataSource(mapName, layerId);
 
-                
+
 
                 if (fc == null)
                     throw new Exception("Unable to access the feature class for layer id:" + layerId);
@@ -262,7 +282,7 @@ namespace GPX.Server.Extension.Spatial
                 fc = null;
             }
         }
-        
+
 
     }
 }

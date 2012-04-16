@@ -1,15 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Text;
-using ESRI.ArcGIS.esriSystem;
+using System.Xml.Linq;
 using ESRI.ArcGIS;
+using ESRI.ArcGIS.esriSystem;
 using MbUnit.Framework;
 using Newtonsoft.Json.Linq;
-using System.Xml.Linq;
-using System.Linq;
-using System.IO;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
 
 namespace GPX.Server.Extension.Tests
 {
@@ -35,7 +31,7 @@ namespace GPX.Server.Extension.Tests
 
             //create an instance of the extension & initialise it using the mock server object helper
             exporter = new Exporter();
-            exporter.Init(MockServerObjectCreator.CreateMockServerObjectHelper(@"C:\Program Files\ArcGIS\DeveloperKit10.0\Samples\data\California\California.mxd"));
+            exporter.Init(MockServerObjectCreator.CreateMockServerObjectHelper(@"C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\testdata\California.mxd"));
             IPropertySet propSet = new PropertySet();
             exporter.Construct(propSet);
         }
@@ -52,8 +48,8 @@ namespace GPX.Server.Extension.Tests
         /// <param name="requestProperties">The request properties.</param>
         /// <param name="expectedResult">The expected result.</param>
         [Test]
-        [Row("", "ExportLayers/2", "", "", "json", "{}", 1,Description = "Valid Export Layer Resource")]
-        [Row("", "ExportLayers/12", "", "", "json", "{}", 0,Description = "Invalid Export Layer Resource")]
+        [Row("", "ExportLayers/2", "", "", "json", "{}", 1, Description = "Valid Export Layer Resource")]
+        [Row("", "ExportLayers/12", "", "", "json", "{}", 0, Description = "Invalid Export Layer Resource")]
         public void ExportLayerResourceRequest(string capabilities, string resourceName, string operationName, string operationInput, string outputFormat, string requestProperties, int expectedResult)
         {
 
@@ -167,6 +163,8 @@ namespace GPX.Server.Extension.Tests
 
 
             Assert.AreEqual(expectedResult, result);
+
+
         }
 
         [Test]
@@ -180,6 +178,16 @@ namespace GPX.Server.Extension.Tests
             221,
             "item",
             Description = "Export Points Simple RSS")]
+        [Row(
+            "",
+            "ExportLayers/2",
+            "ExportLayer",
+            "{\"filterGeometry\":null,\"geometryType\":null,\"where\":null,\"exportProperties\":{\"Title\":\"Californian EarthQuakes\",\"ID\":\"Feed Id\",\"Language\":\"en-us\",\"CopyRight\":\"Copyright 2011\",\"Generator\":\"http://www.mapbutcher.com\",\"Description\":\"A GeoRSS format of Californian EarthQuakes\",\"Link\":{\"BaseUri\":null,\"Length\":0,\"MediaType\":null,\"RelationshipType\":null,\"Title\":\"Mapbutcher\",\"Uri\":\"http://www.mapbutcher.com\"},\"Author\":{\"Email\":\"mapbutcher@mapbutcher.com\",\"Name\":\"Simon\",\"Uri\":\"http://www.mapbutcher.com\"},\"GeometryFormat\":\"simple\",\"GeometryField\":\"Shape\",\"OutputSpatialReference\": {\"Wkid\": 102100,\"CoordinateSystemType\": \"projected\",\"TransformationId\": null},\"FeedFormat\":\"Rss\",\"Items\":[{\"Key\":\"Author\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":\"Simon Hope\",\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"Content\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":null,\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"Contributors\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":\"mapbutcher@mapbutcher.com\",\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"Copyright\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":\"Copyright 2011\",\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"Id\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":\"UFI\",\"MappedContentAlias\":null,\"FixedContent\":null,\"MappedContentDelimeter\":null,\"AutoGenerate\":true}},{\"Key\":\"LastUpdatedTime\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":null,\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"Links\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":\"http://www.mapbutcher.com\",\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"PublishDate\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":null,\"MappedContentDelimeter\":null,\"AutoGenerate\":true}},{\"Key\":\"Summary\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":null,\"MappedContentDelimeter\":null,\"AutoGenerate\":false}},{\"Key\":\"Title\",\"Value\":{\"PostCondition\":null,\"PreConditon\":null,\"MappedContent\":null,\"MappedContentAlias\":null,\"FixedContent\":null,\"MappedContentDelimeter\":null,\"AutoGenerate\":false}}]}}",
+            "georss",
+            "{}",
+            221,
+            "item",
+            Description = "Export Points Simple RSS - Include Spatial Reference")]
         [Row(
             "",
             "ExportLayers/2",
@@ -216,6 +224,7 @@ namespace GPX.Server.Extension.Tests
             int result = 0;
 
             string res = SendRequest(capabilities, resourceName, operationName, operationInput, outputFormat, requestProperties, out outProps);
+            Gallio.Framework.TestLog.WriteLine(res);
 
             //parse the respose
             XDocument xDoc = XDocument.Load(new StringReader(res));

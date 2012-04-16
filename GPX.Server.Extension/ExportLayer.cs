@@ -20,11 +20,6 @@
 //
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using ESRI.ArcGIS.esriSystem;
-using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.SOESupport;
 

@@ -20,24 +20,20 @@
 // CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 #endregion
-      
+
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections.Specialized;
-using System.Runtime.InteropServices;
 using System.EnterpriseServices;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Xml;
+using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.esriSystem;
+using ESRI.ArcGIS.Geodatabase;
+using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Server;
 using ESRI.ArcGIS.SOESupport;
-using System.IO;
-using ESRI.ArcGIS.Carto;
-using System.Xml;
-using ESRI.ArcGIS.Geometry;
-using ESRI.ArcGIS.Geodatabase;
-using System.ServiceModel.Syndication;
 using Newtonsoft.Json;
 
 
@@ -72,7 +68,7 @@ namespace GPX.Server.Extension
         public void Init(IServerObjectHelper pSOH)
         {
             serverObjectHelper = pSOH;
-            
+
         }
 
         public void Shutdown()
@@ -117,9 +113,9 @@ namespace GPX.Server.Extension
 
 
             RestOperation export = new RestOperation("ExportLayer",
-                                          new string[] { "filterGeometry","geometryType","where","exportProperties" },
+                                          new string[] { "filterGeometry", "geometryType", "where", "exportProperties" },
                                           new string[] { "georss" },
-                                          ExportLayerHandler,true);
+                                          ExportLayerHandler, true);
 
 
             exportLayerResource.operations.Add(export);
@@ -198,7 +194,7 @@ namespace GPX.Server.Extension
 
                 if (!operationInput.TryGetJsonObject("exportProperties", out feedPropertiesObject))
                     throw new ArgumentException("Error: Could not parse exportProperties" + feedPropertiesObject.ToJson());
-                
+
 
                 //initialise the correct export properties
                 if (outputFormat == GEORSS_FORMAT)
@@ -214,7 +210,7 @@ namespace GPX.Server.Extension
                 {
                     throw new NotImplementedException();
                 }
-                
+
 
                 //todo - implement transformation support
                 //if (!operationInput.TryGetAsLong("transformationId", out transformationId))
@@ -263,7 +259,7 @@ namespace GPX.Server.Extension
                 //i.e. recordset for GeoRSS and JSON for GeoJson
 
                 //run the query on the map server
-                RecordSet results = mapserver.Query(layerID, location, whereClause, transformationId);
+                RecordSet results = mapserver.Query(layerID, location, whereClause, feedProperties.GeometryField, feedProperties.OutputSpatialReference);
 
                 //generate the export
                 string updateWithEncoding = string.Empty;
@@ -274,7 +270,7 @@ namespace GPX.Server.Extension
                     if (feedProperties != null)
                     {
 
-                       
+
                         GeoRSSExport export = new GeoRSSExport();
                         export.CreateExport(results, feedProperties);
 
@@ -307,14 +303,14 @@ namespace GPX.Server.Extension
 
                     throw new NotImplementedException();
                 }
-                
+
                 return Encoding.UTF8.GetBytes(updateWithEncoding);
             }
             catch (Exception ex)
             {
                 logger.LogMessage(ServerLogger.msgType.error, "ExportLayerHandler", 999999, ex.ToString());
                 responseProperties = null;
-                string error =  JsonConvert.SerializeObject(ex, Newtonsoft.Json.Formatting.Indented);
+                string error = JsonConvert.SerializeObject(ex, Newtonsoft.Json.Formatting.Indented);
                 return Encoding.UTF8.GetBytes(error);
 
             }
@@ -351,6 +347,7 @@ namespace GPX.Server.Extension
                 for (int i = 0; i < c; i++)
                 {
                     layerInfo = layerInfos.get_Element(i);
+
                     if (layerInfo.ID == layerID)
                         return new ExportLayerInfo(layerInfo);
                 }

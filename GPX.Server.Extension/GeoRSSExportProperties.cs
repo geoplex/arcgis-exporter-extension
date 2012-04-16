@@ -21,11 +21,8 @@
 #endregion
 
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ServiceModel.Syndication;
+using GPX.Server.Extension.Spatial;
 using Newtonsoft.Json;
 
 
@@ -46,6 +43,7 @@ namespace GPX.Server.Extension
         private string _geometryFormat;
         private List<KeyValuePair<string, GeoRSSExportItem>> _itens;
         private string _geometryField;
+        private ExportOutputSpatialReference _outputSr;
 
 
         #region Properties
@@ -122,6 +120,12 @@ namespace GPX.Server.Extension
             set { _geometryField = value; }
         }
 
+        public ExportOutputSpatialReference OutputSpatialReference
+        {
+            get { return _outputSr; }
+            set { _outputSr = value; }
+        }
+
         #endregion
 
         #region Constructors
@@ -158,7 +162,8 @@ namespace GPX.Server.Extension
             this.FeedFormat = properties.FeedFormat;
             this.Items = properties.Items;
             this.GeometryField = properties.GeometryField;
-        } 
+            this.OutputSpatialReference = properties.OutputSpatialReference;
+        }
 
         #endregion
 
@@ -169,13 +174,13 @@ namespace GPX.Server.Extension
             if (!string.IsNullOrEmpty(this.GeometryFormat))
             {
                 if (this.GeometryFormat == "GML")
-                    geomType =  GeoRSSGeometryFormat.GML;
+                    geomType = GeoRSSGeometryFormat.GML;
                 if (this.GeometryFormat == "Simple")
-                    geomType =  GeoRSSGeometryFormat.Simple;
+                    geomType = GeoRSSGeometryFormat.Simple;
             }
 
             return geomType;
-            
+
         }
 
         public string ToJson()
