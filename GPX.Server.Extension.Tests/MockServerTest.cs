@@ -164,6 +164,14 @@ namespace GPX.Server.Extension.Tests
 
             Assert.AreEqual(expectedResult, result);
 
+            TextWriter tw = new StreamWriter(@"C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\testresults\" + Gallio.Framework.TestContext.CurrentContext.Test.Name + "_" + DateTime.Now.ToFileTime() + ".xml");
+
+            // write a line of text to the file
+            tw.WriteLine(res);
+
+            // close the stream
+            tw.Close();
+
 
         }
 
@@ -232,6 +240,23 @@ namespace GPX.Server.Extension.Tests
 
 
             Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        [Row(
+            "",
+            "ExportLayers/2",
+            "ExportLayer",
+            "{\"filterGeometry\":null,\"geometryType\":null,\"where\":null,\"exportProperties\":{\"GeometryField\": \"Shape\"}}",
+            "geojson",
+            "{}",
+            Description = "Export Points as GeoJson")]
+        public void ExportGeoJson(string capabilities, string resourceName, string operationName, string operationInput, string outputFormat, string requestProperties)
+        {
+            string outProps;
+
+            string res = SendRequest(capabilities, resourceName, operationName, operationInput, outputFormat, requestProperties, out outProps);
+            Gallio.Framework.TestLog.WriteLine(res);
         }
 
 

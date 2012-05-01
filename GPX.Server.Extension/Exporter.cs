@@ -42,6 +42,7 @@ namespace GPX.Server.Extension
     [ComVisible(true)]
     [Guid("67CBD04A-99AB-4686-A514-541B74E2DC8D")]
     [ClassInterface(ClassInterfaceType.None)]
+
     public class Exporter : ServicedComponent, IServerObjectExtension, IObjectConstruct, IRESTRequestHandler
     {
         private string soe_name;
@@ -94,42 +95,18 @@ namespace GPX.Server.Extension
             return reqHandler.GetSchema();
         }
 
-        public byte[] HandleRESTRequest(string Capabilities, string resourceName, string operationName, string operationInput, string outputFormat, string requestProperties, out string responseProperties)
+        public byte[] HandleRESTRequest(string Capabilities, string resourceName, string operationName, string operationInput,
+            string outputFormat, string requestProperties, out string responseProperties)
         {
             return reqHandler.HandleRESTRequest(Capabilities, resourceName, operationName, operationInput, outputFormat, requestProperties, out responseProperties);
         }
 
         #endregion
 
-        private RestResource CreateRestSchema()
-        {
-            //main extension resource
-            //provides a layer list of all layers in the service on which the extension is attached to.
-            RestResource rootRes = new RestResource(soe_name, false, RootResHandler);
-
-            //provides a single layer view - basically name and layer id
-            RestResource exportLayerResource = new RestResource("ExportLayers", true, ExportLayerResourceHandler);
-
-
-
-            RestOperation export = new RestOperation("ExportLayer",
-                                          new string[] { "filterGeometry", "geometryType", "where", "exportProperties" },
-                                          new string[] { "georss" },
-                                          ExportLayerHandler, true);
-
-
-            exportLayerResource.operations.Add(export);
-
-            rootRes.resources.Add(exportLayerResource);
-
-
-            return rootRes;
-        }
-
-
         #region Resource Handlers
 
-        private byte[] RootResHandler(NameValueCollection boundVariables, string outputFormat, string requestProperties, out string responseProperties)
+        private byte[] RootResHandler(NameValueCollection boundVariables, string outputFormat, string requestProperties,
+            out string responseProperties)
         {
             responseProperties = null;
 
@@ -148,7 +125,8 @@ namespace GPX.Server.Extension
             return Encoding.UTF8.GetBytes(json);
         }
 
-        private byte[] ExportLayerResourceHandler(NameValueCollection boundVariables, string outputFormat, string requestProperties, out string responseProperties)
+        private byte[] ExportLayerResourceHandler(NameValueCollection boundVariables, string outputFormat,
+            string requestProperties, out string responseProperties)
         {
             responseProperties = null;
 
@@ -167,7 +145,8 @@ namespace GPX.Server.Extension
 
         #region Operation Handlers
 
-        private byte[] ExportLayerHandler(NameValueCollection boundVariables, JsonObject operationInput, string outputFormat, string requestProperties, out string responseProperties)
+        private byte[] ExportLayerHandler(NameValueCollection boundVariables, JsonObject operationInput, string outputFormat,
+            string requestProperties, out string responseProperties)
         {
 
             responseProperties = null;
@@ -180,10 +159,9 @@ namespace GPX.Server.Extension
                 JsonObject feedPropertiesObject = null;
                 JsonObject jsonLocation;
                 IGeometry location = null;
-                GeoRSSExportProperties feedProperties = null;
+                IExportProperties exportProperties = null;
                 string whereClause;
                 string geometryType;
-                long? transformationId = null;
                 GPX.Server.Extension.Spatial.MapServer mapserver = new Spatial.MapServer(serverObjectHelper.ServerObject);
 
                 logger.LogMessage(ServerLogger.msgType.infoDetailed, "ExportLayerHandler", 999999, "Beginning Export");
@@ -196,29 +174,21 @@ namespace GPX.Server.Extension
                     throw new ArgumentException("Error: Could not parse exportProperties" + feedPropertiesObject.ToJson());
 
 
+
                 //initialise the correct export properties
-                if (outputFormat == GEORSS_FORMAT)
+                if (feedPropertiesObject != null)
                 {
-                    if (feedPropertiesObject != null)
+                    if (outputFormat == GEORSS_FORMAT)
                     {
 
-                        feedProperties = new GeoRSSExportProperties(feedPropertiesObject.ToJson());
+                        exportProperties = new GeoRSSExportProperties(feedPropertiesObject.ToJson());
+
                     }
-
+                    else
+                    {
+                        exportProperties = new GeoJsonExportProperties(feedPropertiesObject.ToJson());
+                    }
                 }
-                else
-                {
-                    throw new NotImplementedException();
-                }
-
-
-                //todo - implement transformation support
-                //if (!operationInput.TryGetAsLong("transformationId", out transformationId))
-                //    throw new ArgumentNullException("transformationId");
-
-                //todo - test remove
-                //transformationId = 1278;
-
 
                 if (!operationInput.TryGetJsonObject("filterGeometry", out jsonLocation))
                     throw new ArgumentNullException("filterGeometry");
@@ -255,24 +225,21 @@ namespace GPX.Server.Extension
                 if (!operationInput.TryGetString("where", out whereClause))
                     throw new ArgumentNullException("where");
 
-                //todo - dependent upon requested format query the mapserver and set the correct return type
-                //i.e. recordset for GeoRSS and JSON for GeoJson
-
                 //run the query on the map server
-                RecordSet results = mapserver.Query(layerID, location, whereClause, feedProperties.GeometryField, feedProperties.OutputSpatialReference);
+                RecordSet results = mapserver.Query(layerID, location, whereClause, exportProperties.GeometryField, exportProperties.OutputSpatialReference);
 
                 //generate the export
-                string updateWithEncoding = string.Empty;
+                string finalExport = string.Empty;
                 string xmlString = string.Empty;
 
                 if (outputFormat == GEORSS_FORMAT)
                 {
-                    if (feedProperties != null)
+                    if (exportProperties != null)
                     {
 
-
+                        var feedProperties = (GeoRSSExportProperties)exportProperties;
                         GeoRSSExport export = new GeoRSSExport();
-                        export.CreateExport(results, feedProperties);
+                        export.CreateExport(results, exportProperties);
 
                         StringBuilder sb = new StringBuilder();
                         XmlWriter xmlWriter = XmlWriter.Create(sb);
@@ -292,7 +259,7 @@ namespace GPX.Server.Extension
                         xmlString = sb.ToString();
 
                         //todo  - is it the xmlwriter that applies the encoding - setting the xmlwritersettings.encoding does not help!
-                        updateWithEncoding = xmlString.Replace("utf-16", "utf-8");
+                        finalExport = xmlString.Replace("utf-16", "utf-8");
 
                     }
                 }
@@ -301,10 +268,20 @@ namespace GPX.Server.Extension
                     //set response properties
                     responseProperties = null;
 
-                    throw new NotImplementedException();
+                    //if the export properties passed is not null then create the export
+                    if (feedPropertiesObject != null)
+                    {
+
+                        EsriToGeoJson.GeoJsonExport export = new EsriToGeoJson.GeoJsonExport();
+                        export.CreateExport(results, exportProperties.GeometryField);
+                        finalExport = export.GeoJson;
+
+                    }
+
+
                 }
 
-                return Encoding.UTF8.GetBytes(updateWithEncoding);
+                return Encoding.UTF8.GetBytes(finalExport);
             }
             catch (Exception ex)
             {
@@ -324,7 +301,40 @@ namespace GPX.Server.Extension
 
         #endregion
 
+        /// <summary>
+        /// Creates the rest schema.
+        /// </summary>
+        /// <returns></returns>
+        private RestResource CreateRestSchema()
+        {
+            //main extension resource
+            //provides a layer list of all layers in the service on which the extension is attached to.
+            RestResource rootRes = new RestResource(soe_name, false, RootResHandler);
 
+            //provides a single layer view - basically name and layer id
+            RestResource exportLayerResource = new RestResource("ExportLayers", true, ExportLayerResourceHandler);
+
+
+
+            RestOperation export = new RestOperation("ExportLayer",
+                                          new string[] { "filterGeometry", "geometryType", "where", "exportProperties" },
+                                          new string[] { "georss" },
+                                          ExportLayerHandler, true);
+
+
+            exportLayerResource.operations.Add(export);
+
+            rootRes.resources.Add(exportLayerResource);
+
+
+            return rootRes;
+        }
+
+        /// <summary>
+        /// Gets the layer info.
+        /// </summary>
+        /// <param name="layerID">The layer ID.</param>
+        /// <returns></returns>
         private ExportLayerInfo GetLayerInfo(int layerID)
         {
             IMapServer3 mapServer;
@@ -368,7 +378,10 @@ namespace GPX.Server.Extension
             }
         }
 
-
+        /// <summary>
+        /// Gets the layer infos.
+        /// </summary>
+        /// <returns></returns>
         private ExportLayerInfo[] GetLayerInfos()
         {
             IMapServer3 mapServer;
@@ -407,7 +420,6 @@ namespace GPX.Server.Extension
                 layerInfos = null;
             }
         }
-
 
     }
 }

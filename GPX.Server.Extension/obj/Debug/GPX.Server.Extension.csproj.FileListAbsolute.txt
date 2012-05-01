@@ -3,8 +3,15 @@ C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GPX.Server.Exten
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GPX.Server.Extension.exe
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GPX.Server.Extension.pdb
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GPX.Server.Extension.Spatial.dll
-C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\Newtonsoft.Json.dll
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GPX.Server.Extension.Spatial.pdb
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\obj\Debug\ResolveAssemblyReference.cache
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\obj\Debug\GPX.Server.Extension.exe
 C:\Git\arcgis-exporter-extension\GPX.Server.Extension\obj\Debug\GPX.Server.Extension.pdb
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\EsriToGeoJson.dll
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GeoJSON.Net.dll
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\EsriToGeoJson.pdb
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GeoJSON.Net.pdb
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\GeoJSON.Net.xml
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\Newtonsoft.Json.dll
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\Newtonsoft.Json.pdb
+C:\Git\arcgis-exporter-extension\GPX.Server.Extension\bin\Debug\Newtonsoft.Json.xml

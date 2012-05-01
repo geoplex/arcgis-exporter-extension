@@ -72,6 +72,7 @@ namespace GPX.Server.Extension.Spatial
                 //todo
                 //the geometry field name comes in via the request, but could we look at layerinfo from the map server?
                 //the type of spatial reference systen should be passed in: i.e. geographic or projected
+                //already implemented method: GetFeatureClassShapeFieldName which does this
 
                 //create desired output spatial reference
                 if (outputSr != null)
@@ -118,6 +119,7 @@ namespace GPX.Server.Extension.Spatial
 
 
                 tableDesc = GetTableDesc(_server, layerId);
+
 
                 result = _server.QueryData(_server.DefaultMapName, tableDesc, filter, resultOptions);
 

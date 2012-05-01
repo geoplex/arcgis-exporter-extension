@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.gallio.org/">
+  <testPackage shadowCopy="false" debug="true">
+    <files>
+      <file>C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.dll</file>
+    </files>
+    <hintDirectories />
+    <excludedFrameworkIds />
+    <properties />
+  </testPackage>
+  <testModel>
+    <test id="c2722843734a7a54" name="Root" fullName="" isTestCase="false">
+      <codeReference />
+      <codeLocation />
+      <metadata>
+        <entry key="TestKind">
+          <value>Root</value>
+        </entry>
+      </metadata>
+      <children>
+        <test id="6dc504354be92436" name="GPX.Server.Extension.Tests" fullName="GPX.Server.Extension.Tests" isTestCase="false">
+          <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.DLL" />
+          <metadata>
+            <entry key="TestKind">
+              <value>MbUnit v3 Assembly</value>
+            </entry>
+            <entry key="File">
+              <value>C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.DLL</value>
+            </entry>
+            <entry key="CodeBase">
+              <value>C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.DLL</value>
+            </entry>
+            <entry key="Company">
+              <value>Geoplex</value>
+            </entry>
+            <entry key="Copyright">
+              <value>Copyright © geoplex 2011</value>
+            </entry>
+            <entry key="FileVersion">
+              <value>1.0.0.0</value>
+            </entry>
+            <entry key="Product">
+              <value>GPX.Server.Extension.Tests</value>
+            </entry>
+            <entry key="Title">
+              <value>GPX.Server.Extension.Tests</value>
+            </entry>
+            <entry key="Version">
+              <value>1.0.0.0</value>
+            </entry>
+            <entry key="Framework">
+              <value>MbUnit v3.3 build 454</value>
+            </entry>
+          </metadata>
+          <children>
+            <test id="260460c3946ccce2" name="MockServerTest" fullName="GPX.Server.Extension.Tests/MockServerTest" isTestCase="false">
+              <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" />
+              <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" />
+              <metadata>
+                <entry key="TestKind">
+                  <value>Fixture</value>
+                </entry>
+              </metadata>
+              <children>
+                <test id="f502cd2677cbc474" name="ExportLayerResourceRequest" fullName="GPX.Server.Extension.Tests/MockServerTest/ExportLayerResourceRequest" isTestCase="true">
+                  <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" />
+                  <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" line="58" />
+                  <metadata>
+                    <entry key="TestKind">
+                      <value>Test</value>
+                    </entry>
+                  </metadata>
+                  <children />
+                  <parameters>
+                    <parameter id="f502cd2677cbc474@capabilities" name="capabilities">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="capabilities" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="f502cd2677cbc474@resourceName" name="resourceName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="resourceName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="f502cd2677cbc474@operationName" name="operationName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="operationName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="f502cd2677cbc474@operationInput" name="operationInput">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="operationInput" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="f502cd2677cbc474@outputFormat" name="outputFormat">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="outputFormat" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="f502cd2677cbc474@requestProperties" name="requestProperties">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="requestProperties" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="f502cd2677cbc474@expectedResult" name="expectedResult">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportLayerResourceRequest" parameter="expectedResult" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                  </parameters>
+                </test>
+                <test id="3329aded5f51c3be" name="ExportGeoRSS_RSSFormat_Layer" fullName="GPX.Server.Extension.Tests/MockServerTest/ExportGeoRSS_RSSFormat_Layer" isTestCase="true">
+                  <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" />
+                  <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" line="214" />
+                  <metadata>
+                    <entry key="TestKind">
+                      <value>Test</value>
+                    </entry>
+                  </metadata>
+                  <children />
+                  <parameters>
+                    <parameter id="3329aded5f51c3be@capabilities" name="capabilities">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="capabilities" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@resourceName" name="resourceName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="resourceName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@operationName" name="operationName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="operationName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@operationInput" name="operationInput">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="operationInput" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@outputFormat" name="outputFormat">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="outputFormat" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@requestProperties" name="requestProperties">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="requestProperties" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@expectedResult" name="expectedResult">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="expectedResult" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3329aded5f51c3be@itemElementName" name="itemElementName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_RSSFormat_Layer" parameter="itemElementName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                  </parameters>
+                </test>
+                <test id="3321bbe20b4d2ea" name="ExportGeoRSS_AtomFormat_Layer" fullName="GPX.Server.Extension.Tests/MockServerTest/ExportGeoRSS_AtomFormat_Layer" isTestCase="true">
+                  <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" />
+                  <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" line="156" />
+                  <metadata>
+                    <entry key="TestKind">
+                      <value>Test</value>
+                    </entry>
+                  </metadata>
+                  <children />
+                  <parameters>
+                    <parameter id="3321bbe20b4d2ea@capabilities" name="capabilities">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="capabilities" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@resourceName" name="resourceName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="resourceName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@operationName" name="operationName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="operationName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@operationInput" name="operationInput">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="operationInput" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@outputFormat" name="outputFormat">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="outputFormat" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@requestProperties" name="requestProperties">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="requestProperties" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@expectedResult" name="expectedResult">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="expectedResult" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@nameSpace" name="nameSpace">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="nameSpace" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                    <parameter id="3321bbe20b4d2ea@itemElementName" name="itemElementName">
+                      <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" parameter="itemElementName" />
+                      <codeLocation />
+                      <metadata />
+                    </parameter>
+                  </parameters>
+                </test>
+              </children>
+              <parameters />
+            </test>
+          </children>
+          <parameters />
+        </test>
+      </children>
+      <parameters />
+    </test>
+    <annotations>
+      <annotation type="error" message="A fatal exception occurred while running tests.  See log for details.">
+        <codeLocation />
+        <codeReference />
+      </annotation>
+    </annotations>
+  </testModel>
+  <testPackageRun startTime="2012-03-28T20:01:20.01516+11:00" endTime="2012-03-28T20:02:03.4175696+11:00">
+    <testStepRun startTime="2012-03-28T20:01:24.6518272+11:00" endTime="2012-03-28T20:02:03.4175696+11:00">
+      <testStep id="abe268edcf77d608" name="Root" fullName="" testId="c2722843734a7a54" isPrimary="true" isTestCase="false" isDynamic="false">
+        <codeReference />
+        <codeLocation />
+        <metadata>
+          <entry key="TestKind">
+            <value>Root</value>
+          </entry>
+        </metadata>
+      </testStep>
+      <children>
+        <testStepRun startTime="2012-03-28T20:01:24.772+11:00" endTime="0001-01-01T00:00:00">
+          <testStep id="197199636ab573f8" name="GPX.Server.Extension.Tests" fullName="GPX.Server.Extension.Tests" testId="6dc504354be92436" isPrimary="true" isTestCase="false" isDynamic="false">
+            <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.DLL" />
+            <metadata>
+              <entry key="TestKind">
+                <value>MbUnit v3 Assembly</value>
+              </entry>
+              <entry key="File">
+                <value>C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.DLL</value>
+              </entry>
+              <entry key="CodeBase">
+                <value>C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\bin\Debug\GPX.Server.Extension.Tests.DLL</value>
+              </entry>
+              <entry key="Company">
+                <value>Geoplex</value>
+              </entry>
+              <entry key="Copyright">
+                <value>Copyright © geoplex 2011</value>
+              </entry>
+              <entry key="FileVersion">
+                <value>1.0.0.0</value>
+              </entry>
+              <entry key="Product">
+                <value>GPX.Server.Extension.Tests</value>
+              </entry>
+              <entry key="Title">
+                <value>GPX.Server.Extension.Tests</value>
+              </entry>
+              <entry key="Version">
+                <value>1.0.0.0</value>
+              </entry>
+              <entry key="Framework">
+                <value>MbUnit v3.3 build 454</value>
+              </entry>
+            </metadata>
+          </testStep>
+          <children>
+            <testStepRun startTime="2012-03-28T20:01:24.7920288+11:00" endTime="0001-01-01T00:00:00">
+              <testStep id="20075c6457cef6f" name="MockServerTest" fullName="GPX.Server.Extension.Tests/MockServerTest" testId="260460c3946ccce2" isPrimary="true" isTestCase="false" isDynamic="false">
+                <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" />
+                <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" />
+                <metadata>
+                  <entry key="TestKind">
+                    <value>Fixture</value>
+                  </entry>
+                </metadata>
+              </testStep>
+              <children>
+                <testStepRun startTime="2012-03-28T20:01:24.822072+11:00" endTime="0001-01-01T00:00:00">
+                  <testStep id="fb4d26eea8c740ca" name="ExportGeoRSS_AtomFormat_Layer" fullName="GPX.Server.Extension.Tests/MockServerTest/ExportGeoRSS_AtomFormat_Layer" testId="3321bbe20b4d2ea" isPrimary="true" isTestCase="false" isDynamic="false">
+                    <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" />
+                    <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" line="156" />
+                    <metadata>
+                      <entry key="TestKind">
+                        <value>Test</value>
+                      </entry>
+                    </metadata>
+                  </testStep>
+                  <children>
+                    <testStepRun startTime="2012-03-28T20:01:24.8521152+11:00" endTime="0001-01-01T00:00:00">
+                      <testStep id="12906c0689711731" name="ExportGeoRSS_AtomFormat_Layer(&quot;&quot;, &quot;ExportLayers/7&quot;, &quot;ExportLayer&quot;, &quot;{\&quot;filterGeometry\&quot;:null,\&quot;geometryType\&quot;:null,\&quot;where\&quot;:null,\&quot;exportProperties\&quot;:{\&quot;Title\&quot;:\&quot;Californian Rivers\&quot;,\&quot;ID\&quot;:\&quot;Feed Id\&quot;,\&quot;Language\&quot;:\&quot;en-us\&quot;,\&quot;CopyRight\&quot;:\&quot;Copyright 2011\&quot;,\&quot;Generator\&quot;:\&quot;http://www.mapbutcher.com\&quot;,\&quot;Description\&quot;:\&quot;A GeoRSS format of Californian Rivers\&quot;,\&quot;Link\&quot;:{\&quot;BaseUri\&quot;:null,\&quot;Length\&quot;:0,\&quot;MediaType\&quot;:null,\&quot;RelationshipType\&quot;:null,\&quot;Title\&quot;:\&quot;Mapbutcher\&quot;,\&quot;Uri\&quot;:\&quot;http://www.mapbutcher.com\&quot;},\&quot;Author\&quot;:{\&quot;Email\&quot;:\&quot;mapbutcher@mapbutcher.com\&quot;,\&quot;Name\&quot;:\&quot;Simon\&quot;,\&quot;Uri\&quot;:\&quot;http://www.mapbutcher.com\&quot;},\&quot;GeometryFormat\&quot;:\&quot;GML\&quot;,\&quot;GeometryField\&quot;:\&quot;Shape\&quot;,\&quot;FeedFormat\&quot;:\&quot;Atom\&quot;,\&quot;Items\&quot;:[{\&quot;Key\&quot;:\&quot;Author\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;Simon Hope\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Content\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Contributors\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;mapbutcher@mapbutcher.com\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Copyright\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;Copyright 2011\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Id\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:\&quot;UFI\&quot;,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:true}},{\&quot;Key\&quot;:\&quot;LastUpdatedTime\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Links\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;http://www.mapbutcher.com\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;PublishDate\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:true}},{\&quot;Key\&quot;:\&quot;Summary\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Title\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}}]}}&quot;, &quot;georss&quot;, &quot;{}&quot;, 500, &quot;http://www.w3.org/2005/Atom&quot;, &quot;entry&quot;)" fullName="GPX.Server.Extension.Tests/MockServerTest/ExportGeoRSS_AtomFormat_Layer/ExportGeoRSS_AtomFormat_Layer(&quot;&quot;, &quot;ExportLayers/7&quot;, &quot;ExportLayer&quot;, &quot;{\&quot;filterGeometry\&quot;:null,\&quot;geometryType\&quot;:null,\&quot;where\&quot;:null,\&quot;exportProperties\&quot;:{\&quot;Title\&quot;:\&quot;Californian Rivers\&quot;,\&quot;ID\&quot;:\&quot;Feed Id\&quot;,\&quot;Language\&quot;:\&quot;en-us\&quot;,\&quot;CopyRight\&quot;:\&quot;Copyright 2011\&quot;,\&quot;Generator\&quot;:\&quot;http://www.mapbutcher.com\&quot;,\&quot;Description\&quot;:\&quot;A GeoRSS format of Californian Rivers\&quot;,\&quot;Link\&quot;:{\&quot;BaseUri\&quot;:null,\&quot;Length\&quot;:0,\&quot;MediaType\&quot;:null,\&quot;RelationshipType\&quot;:null,\&quot;Title\&quot;:\&quot;Mapbutcher\&quot;,\&quot;Uri\&quot;:\&quot;http://www.mapbutcher.com\&quot;},\&quot;Author\&quot;:{\&quot;Email\&quot;:\&quot;mapbutcher@mapbutcher.com\&quot;,\&quot;Name\&quot;:\&quot;Simon\&quot;,\&quot;Uri\&quot;:\&quot;http://www.mapbutcher.com\&quot;},\&quot;GeometryFormat\&quot;:\&quot;GML\&quot;,\&quot;GeometryField\&quot;:\&quot;Shape\&quot;,\&quot;FeedFormat\&quot;:\&quot;Atom\&quot;,\&quot;Items\&quot;:[{\&quot;Key\&quot;:\&quot;Author\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;Simon Hope\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Content\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Contributors\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;mapbutcher@mapbutcher.com\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Copyright\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;Copyright 2011\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Id\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:\&quot;UFI\&quot;,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:true}},{\&quot;Key\&quot;:\&quot;LastUpdatedTime\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Links\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:\&quot;http://www.mapbutcher.com\&quot;,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;PublishDate\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:true}},{\&quot;Key\&quot;:\&quot;Summary\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}},{\&quot;Key\&quot;:\&quot;Title\&quot;,\&quot;Value\&quot;:{\&quot;PostCondition\&quot;:null,\&quot;PreConditon\&quot;:null,\&quot;MappedContent\&quot;:null,\&quot;MappedContentAlias\&quot;:null,\&quot;FixedContent\&quot;:null,\&quot;MappedContentDelimeter\&quot;:null,\&quot;AutoGenerate\&quot;:false}}]}}&quot;, &quot;georss&quot;, &quot;{}&quot;, 500, &quot;http://www.w3.org/2005/Atom&quot;, &quot;entry&quot;)" testId="3321bbe20b4d2ea" isPrimary="false" isTestCase="true" isDynamic="false">
+                        <codeReference assembly="GPX.Server.Extension.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" namespace="GPX.Server.Extension.Tests" type="GPX.Server.Extension.Tests.MockServerTest" member="ExportGeoRSS_AtomFormat_Layer" />
+                        <codeLocation path="C:\Git\arcgis-exporter-extension\GPX.Server.Extension.Tests\MockServerTest.cs" line="156" />
+                        <metadata>
+                          <entry key="TestKind">
+                            <value>Test</value>
+                          </entry>
+                          <entry key="Description">
+                            <value>Export Lines GML Atom - test assumes 500 feature limit threshhold set by mock server object</value>
+                          </entry>
+                        </metadata>
+                      </testStep>
+                      <children />
+                      <result assertCount="0" duration="0">
+                        <outcome status="inconclusive" />
+                      </result>
+                      <testLog>
+                        <streams />
+                        <attachments />
+                      </testLog>
+                    </testStepRun>
+                  </children>
+                  <result assertCount="0" duration="0">
+                    <outcome status="inconclusive" />
+                  </result>
+                  <testLog>
+                    <streams />
+                    <attachments />
+                  </testLog>
+                </testStepRun>
+              </children>
+              <result assertCount="0" duration="0">
+                <outcome status="inconclusive" />
+              </result>
+              <testLog>
+                <streams />
+                <attachments />
+              </testLog>
+            </testStepRun>
+          </children>
+          <result assertCount="0" duration="0">
+            <outcome status="inconclusive" />
+          </result>
+          <testLog>
+            <streams />
+            <attachments />
+          </testLog>
+        </testStepRun>
+      </children>
+      <result assertCount="0" duration="43.4051056">
+        <outcome status="passed" />
+      </result>
+      <testLog>
+        <streams />
+        <attachments />
+      </testLog>
+    </testStepRun>
+    <statistics assertCount="0" duration="43.4058485" runCount="0" passedCount="0" failedCount="0" inconclusiveCount="0" skippedCount="0" testCount="0" stepCount="1">
+      <outcomeSummaries />
+    </statistics>
+  </testPackageRun>
+  <logEntries>
+    <logEntry severity="debug" message="Disabled plugin 'Gallio40': The plugin enable condition was not satisfied.  Please note that this is the intended behavior for plugins that must be hosted inside third party applications in order to work.  Enable condition: '${minFramework:NET40}'." />
+    <logEntry severity="debug" message="Disabled plugin 'Gallio.VisualStudio.Shell100': The plugin enable condition was not satisfied.  Please note that this is the intended behavior for plugins that must be hosted inside third party applications in order to work.  Enable condition: '${process:DEVENV.EXE_V10.0} or ${process:VSTESTHOST.EXE_V10.0} or ${process:QTAGENT.EXE_V10.0} or ${process:QTAGENT32.EXE_V10.0} or ${process:QTDCAGENT.EXE_V10.0} or ${process:QTDCAGENT32.EXE_V10.0} or ${process:MSTEST.EXE_V10.0} or ${framework:NET40}'." />
+    <logEntry severity="debug" message="Disabled plugin 'MbUnit40': The plugin depends on another disabled plugin: 'Gallio40'." />
+    <logEntry severity="debug" message="Disabled plugin 'Gallio.VisualStudio.Tip100': The plugin depends on another disabled plugin: 'Gallio.VisualStudio.Shell100'." />
+    <logEntry severity="warning" message="Could not send Ping message to the remote host service." details="Gallio.Runtime.Hosting.HostException: The remote host service threw an exception or could not be reached. ---&gt; System.Runtime.Remoting.RemotingException: Failed to read from an IPC Port: The pipe has been ended.&#xA;&#xA;&#xA;Server stack trace: &#xA;   at System.Runtime.Remoting.Channels.Ipc.IpcPort.Read(Byte[] data, Int32 offset, Int32 length)&#xA;   at System.Runtime.Remoting.Channels.Ipc.PipeStream.Read(Byte[] buffer, Int32 offset, Int32 size)&#xA;   at System.Runtime.Remoting.Channels.SocketHandler.ReadFromSocket(Byte[] buffer, Int32 offset, Int32 count)&#xA;   at System.Runtime.Remoting.Channels.SocketHandler.Read(Byte[] buffer, Int32 offset, Int32 count)&#xA;   at System.Runtime.Remoting.Channels.SocketHandler.ReadAndMatchFourBytes(Byte[] buffer)&#xA;   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadAndMatchPreamble()&#xA;   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadVersionAndOperation(UInt16&amp; operation)&#xA;   at System.Runtime.Remoting.Channels.Ipc.IpcClientHandler.ReadHeaders()&#xA;   at System.Runtime.Remoting.Channels.Ipc.IpcClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders&amp; responseHeaders, Stream&amp; responseStream)&#xA;   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)&#xA;&#xA;Exception rethrown at [0]: &#xA;   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xA;   at Gallio.Runtime.Hosting.IHostService.Ping()&#xA;   at Gallio.Runtime.Hosting.RemoteHost.ProxyHostService.PingImpl() in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Runtime\Hosting\RemoteHost.cs:line 193&#xA;   --- End of inner exception stack trace ---&#xA;   at Gallio.Runtime.Hosting.RemoteHost.ProxyHostService.PingImpl() in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Runtime\Hosting\RemoteHost.cs:line 197&#xA;   at Gallio.Runtime.Hosting.BaseHostService.Ping() in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Runtime\Hosting\BaseHostService.cs:line 41&#xA;   at Gallio.Runtime.Hosting.RemoteHost.PingTimerElapsed(Object state) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Runtime\Hosting\RemoteHost.cs:line 140" />
+    <logEntry severity="info" message="Host process exited with code: 0" />
+    <logEntry severity="error" message="A fatal exception occurred while running tests.  Possible causes include invalid test runner parameters and stack overflows." details="Gallio.Model.ModelException: An exception occurred while invoking a test driver. ---&gt; System.Runtime.Remoting.RemotingException: Failed to connect to an IPC Port: The system cannot find the file specified.&#xA; &#xA;&#xA;Server stack trace: &#xA;   at System.Runtime.Remoting.Channels.Ipc.IpcPort.Connect(String portName, Boolean secure, TokenImpersonationLevel impersonationLevel, Int32 timeout)&#xA;   at System.Runtime.Remoting.Channels.Ipc.ConnectionCache.GetConnection(String portName, Boolean secure, TokenImpersonationLevel level, Int32 timeout)&#xA;   at System.Runtime.Remoting.Channels.Ipc.IpcClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders&amp; responseHeaders, Stream&amp; responseStream)&#xA;   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)&#xA;&#xA;Exception rethrown at [0]: &#xA;   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xA;   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xA;   at Gallio.Model.Isolation.HostedTestIsolationContext.Shim.Shutdown()&#xA;   at Gallio.Model.Isolation.HostedTestIsolationContext.RunIsolatedTaskInHost[TIsolatedTask](HostSetup hostSetup, StatusReporter statusReporter, Object[] args) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\Isolation\HostedTestIsolationContext.cs:line 149&#xA;   at Gallio.Model.Isolation.HostedTestIsolationContext.RunIsolatedTaskImpl[TIsolatedTask](HostSetup hostSetup, StatusReporter statusReporter, Object[] args) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\Isolation\HostedTestIsolationContext.cs:line 93&#xA;   at Gallio.Model.Isolation.BaseTestIsolationContext.RunIsolatedTask[TIsolatedTask](HostSetup hostSetup, StatusReporter statusReporter, Object[] args) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\Isolation\BaseTestIsolationContext.cs:line 59&#xA;   at Gallio.Model.DotNetTestDriver.ExploreOrRunAssembly(ITestIsolationContext testIsolationContext, TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, RemoteMessageSink remoteMessageSink, IProgressMonitor progressMonitor, String taskName, FileInfo file) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DotNetTestDriver.cs:line 196&#xA;   at Gallio.Model.DotNetTestDriver.ExploreOrRun(ITestIsolationContext testIsolationContext, TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, IMessageSink messageSink, IProgressMonitor progressMonitor, String taskName) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DotNetTestDriver.cs:line 163&#xA;   at Gallio.Model.DotNetTestDriver.RunImpl(ITestIsolationContext testIsolationContext, TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, IMessageSink messageSink, IProgressMonitor progressMonitor) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DotNetTestDriver.cs:line 148&#xA;   at Gallio.Model.BaseTestDriver.Run(ITestIsolationContext testIsolationContext, TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, IMessageSink messageSink, IProgressMonitor progressMonitor) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\BaseTestDriver.cs:line 94&#xA;   at Gallio.Model.DefaultTestFrameworkManager.FilteredTestDriver.&lt;&gt;c__DisplayClass1f.&lt;RunImpl&gt;b__1d(ITestDriver driver, IList`1 items, Int32 driverCount) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DefaultTestFrameworkManager.cs:line 465&#xA;   at Gallio.Model.DefaultTestFrameworkManager.FilteredTestDriver.ForEachDriver[T](MultiMap`2 testFrameworkPartitions, Func`4 func) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DefaultTestFrameworkManager.cs:line 527&#xA;   --- End of inner exception stack trace ---&#xA;   at Gallio.Model.DefaultTestFrameworkManager.FilteredTestDriver.ForEachDriver[T](MultiMap`2 testFrameworkPartitions, Func`4 func) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DefaultTestFrameworkManager.cs:line 533&#xA;   at Gallio.Model.DefaultTestFrameworkManager.FilteredTestDriver.RunImpl(ITestIsolationContext testIsolationContext, TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, IMessageSink messageSink, IProgressMonitor progressMonitor) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\DefaultTestFrameworkManager.cs:line 460&#xA;   at Gallio.Model.BaseTestDriver.Run(ITestIsolationContext testIsolationContext, TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, IMessageSink messageSink, IProgressMonitor progressMonitor) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Model\BaseTestDriver.cs:line 94&#xA;   at Gallio.Runner.DefaultTestRunner.Run(TestPackage testPackage, TestExplorationOptions testExplorationOptions, TestExecutionOptions testExecutionOptions, IProgressMonitor progressMonitor) in c:\Server\Projects\MbUnit v3.3\Work\src\Gallio\Gallio\Runner\DefaultTestRunner.cs:line 314" />
+  </logEntries>
+</report>

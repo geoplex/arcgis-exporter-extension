@@ -20,16 +20,25 @@
 //
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
+using GPX.Server.Extension.Spatial;
 namespace GPX.Server.Extension
 {
     public interface IExportProperties
     {
         string ToJson();
+
+        string GeometryField
+        {
+            get;
+            set;
+        }
+
+        ExportOutputSpatialReference OutputSpatialReference
+        {
+            get;
+            set;
+        }
 
     }
 
