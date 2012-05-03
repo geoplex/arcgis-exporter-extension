@@ -318,7 +318,7 @@ namespace GPX.Server.Extension
 
             RestOperation export = new RestOperation("ExportLayer",
                                           new string[] { "filterGeometry", "geometryType", "where", "exportProperties" },
-                                          new string[] { "georss" },
+                                          new string[] { "georss", "geojson" },
                                           ExportLayerHandler, true);
 
 
